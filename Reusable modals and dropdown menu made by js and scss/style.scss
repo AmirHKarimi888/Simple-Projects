@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.header__nav {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+
+    .header__navmenu {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+
+        .header__navmenuItem {
+            cursor: pointer;
+
+            .header__navmenuItemOptions {
+                background: rgba(0, 0, 0, 0.7);
+                list-style: none;
+                position: fixed;
+                top: 58px;
+                display: none;
+
+                .header__navmenuItemOptionsItem {
+                    padding: 20px;
+
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.5);
+                        transition: 1s;
+                    }
+
+                    .header__navmenuItemOptionsItemOptions {
+                        background: rgba(0, 0, 0, 0.7);
+                        list-style: none;
+                        position: fixed;
+                        margin-top: -38px;
+                        margin-left: 81px;
+                        display: none;
+
+                        .header__navmenuItemOptionsItemOptionsItem {
+                            padding: 20px;
+
+                            &:hover {
+                                background: rgba(0, 0, 0, 0.5);
+                                transition: 1s;
+                            }
+                        }
+                    }
+
+                    .dropdownActive {
+                        display: grid;
+                        animation: moveInBottom 1s;
+                    }
+                }
+            }
+
+            .dropdownActive {
+                display: grid;
+                animation: moveInBottom 1s;
+            }
+
+        }
+    }
+}
+
+.modalBackdrop {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    .modal {
+        width: 300px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        animation: zoomOut 1s;
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scaleX(0.1) scaleY(0.1);
+    }
+
+    100% {
+        transform: scaleX(1) scaleY(1);
+    }
+}
